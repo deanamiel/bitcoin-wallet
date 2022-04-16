@@ -11,11 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
-    "bip39": "^3.0.4",
     "bitcore-lib": "^8.25.25",
-    "bs58check": "^2.1.2",
-    "create-hash": "^1.2.0",
-    "dotenv": "^16.0.0",
-    "hdkey": "^2.0.1"
+    "dotenv": "^16.0.0"
   }
 }
