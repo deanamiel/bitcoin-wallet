@@ -40,7 +40,7 @@ This command returns all the UTXOs associated with the specified address (with a
 
 node hot.js send-transaction [serialized transaction]
 
-This command transmits the serialized transaction to the bitcoin testnet and returns the transaction ID which can be used to track the transaction on the bitcoin testnet block explorer.
+This command transmits the serialized signed transaction to the bitcoin testnet and returns the transaction ID which can be used to track the transaction on the bitcoin testnet block explorer.
 
 # Installing and Running the Application
 
@@ -48,13 +48,13 @@ To use this application, simply clone this repository and run "npm install" in t
 
 # Sending a Transaction: Step-By-Step Guide
 
-1. Run "node cold.js create-wallet" from the root directory
+1. Run "node cold.js create-wallet" from the root directory.
 2. Run "node cold.js get-address" to retrieve the public address generated.
 3. Use a bitcoin testnet faucet to send bitcoin to the public address from step 2.
 4. After 10-15 minutes, verify that the transaction in step 3 has been confirmed.
 5. Run "node hot.js get-balance [step 2 address]" to verify that the address has a nonzero balance.
 6. Run "node hot.js get-utxos [step 2 address]" to write the UTXOs (there should only be 1 at this point) to the utxo.json file.
-7. Run "node cold.js sign-transaction [receiver address] [amount]" with a specified receiver address and amount (amount must be less than the public address balance of the transaction will fail). A serialized signed transaction will be printed to the console as a hexadecimal number. Copy this number.
+7. Run "node cold.js sign-transaction [receiver address] [amount]" with a specified receiver address and amount (amount must be less than the public address balance or the transaction will fail). A serialized signed transaction will be printed to the console as a hexadecimal number. Copy this number.
 8. Run "node hot.js send-transaction [output from step 7]" to transmit the transaction to the bitcoin testnet. This step should return a JSON object with the transaction ID that can be used to track the status of the transaction on a bitcoin testnet explorer.
 
 
