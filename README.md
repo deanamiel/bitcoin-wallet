@@ -2,6 +2,8 @@
 
 This application simulates a bitcoin cold storage application and is broken down into two components: the "cold" portion of the application and the "hot" portion of the application. The "cold" portion of the application generates and stores private keys and their corresponding public addresses. The "cold" portion of the application also constructs and signs transactions with the private key specified by the user. The "hot" portion of the application handles the networking component of the application which enables it to retrieve public address balances and UTXOs and also propagate signed transactions to the bitcoin testnet.
 
+In this implementation, the "cold" and "hot" portions of the application are running on the same device, however, in theory the "cold" portion can perform all operations offline in a more secure environment so private keys are never exposed to the internet. Necessary information could then be passed between both portions of the application using Bluetooth or a USB.
+
 # Cold Wallet Architecture
 
 The cold wallet implements a simple JBOK bitcoin wallet in which an arbitrary amount of private key - public address pairs can be generated with no relation to one another. Private keys and public addresses are stored in a separate file called keys.json located in the wallet folder. The cold wallet also reads in UTXOs that are stored in the utxo.json file in the root directory (these UTXOs pertain to a specific public address) and constructs transactions based on these UTXOs as inputs. The wallet then signs these transactions and returns them in serialized form.
