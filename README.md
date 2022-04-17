@@ -4,7 +4,7 @@ This application simulates a bitcoin cold storage application and is broken down
 
 # Cold Wallet Architecture
 
-The cold wallet implements a simple JBOK bitcoin wallet in which an arbitrary amount of private key - public key pairs can be generated with no relation to one another. Private keys and public addresses are stored in a separate file called keys.json located in the wallet folder. The cold wallet also reads in UTXOs that are stored in the utxo.json file in the root directory (these UTXOs pertain to a specific public address) and constructs transactions based on these UTXOs as inputs. The wallet then signs these transactions and returns them in serialized form.
+The cold wallet implements a simple JBOK bitcoin wallet in which an arbitrary amount of private key - public address pairs can be generated with no relation to one another. Private keys and public addresses are stored in a separate file called keys.json located in the wallet folder. The cold wallet also reads in UTXOs that are stored in the utxo.json file in the root directory (these UTXOs pertain to a specific public address) and constructs transactions based on these UTXOs as inputs. The wallet then signs these transactions and returns them in serialized form.
 
 Cold Wallet CLI Command Guide:
 
